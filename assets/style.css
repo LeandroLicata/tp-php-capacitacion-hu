@@ -1,0 +1,337 @@
+/* ===============================================================
+   Hoja de estilos común a todos los scripts del Trabajo Práctico
+   de PHP — Capacitación HU
+   =============================================================== */
+
+/* ===== Variables de color (misma paleta que los TP anteriores) ===== */
+:root {
+    --color-primario: #1f3a68;
+    --color-acento: #3498db;
+    --color-fondo: #f4f6f8;
+    --color-tarjeta: #ffffff;
+    --color-texto: #2c3e50;
+    --color-texto-suave: #7f8c8d;
+    --color-exito: #27ae60;
+    --color-alerta: #e67e22;
+    --color-error: #e74c3c;
+    --color-borde: #e1e4e8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    margin: 0;
+    padding: 2rem 1rem 3rem;
+}
+
+.contenedor {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* ===== Encabezado de página ===== */
+.encabezado {
+    background-color: var(--color-primario);
+    color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 10px 10px 0 0;
+}
+
+.encabezado h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.encabezado p {
+    margin: 0.3rem 0 0;
+    color: #c9d6e8;
+    font-size: 0.95rem;
+}
+
+.migas {
+    background-color: #ffffff;
+    border: 1px solid var(--color-borde);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    padding: 0.6rem 2rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== Tarjetas ===== */
+.tarjeta {
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.tarjeta h2 {
+    margin-top: 0;
+    color: var(--color-primario);
+    font-size: 1.15rem;
+    border-bottom: 2px solid var(--color-acento);
+    padding-bottom: 0.4rem;
+}
+
+.tarjeta h3 {
+    color: var(--color-primario);
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+/* ===== Listas de datos ===== */
+.datos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.datos li {
+    padding: 0.35rem 0;
+    border-bottom: 1px dashed var(--color-borde);
+}
+
+.datos li:last-child {
+    border-bottom: none;
+}
+
+.datos strong {
+    color: var(--color-primario);
+}
+
+/* ===== Resultado destacado ===== */
+.resultado {
+    background-color: #eef4fb;
+    border-left: 4px solid var(--color-acento);
+    padding: 0.9rem 1.2rem;
+    border-radius: 4px;
+    margin: 1rem 0 0;
+    font-size: 1.05rem;
+}
+
+.resultado.exito {
+    background-color: #e8f8f0;
+    border-left-color: var(--color-exito);
+}
+
+.resultado.alerta {
+    background-color: #fdf3e6;
+    border-left-color: var(--color-alerta);
+}
+
+.resultado.error {
+    background-color: #fdecea;
+    border-left-color: var(--color-error);
+}
+
+.numero-grande {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    display: block;
+    line-height: 1.2;
+}
+
+/* ===== Etiquetas de estado ===== */
+.etiqueta {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.etiqueta.verde {
+    background-color: var(--color-exito);
+}
+
+.etiqueta.naranja {
+    background-color: var(--color-alerta);
+}
+
+.etiqueta.roja {
+    background-color: var(--color-error);
+}
+
+.etiqueta.azul {
+    background-color: var(--color-acento);
+}
+
+/* ===== Tablas ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
+}
+
+th, td {
+    border: 1px solid var(--color-borde);
+    padding: 0.45rem 0.6rem;
+    text-align: center;
+}
+
+thead th {
+    background-color: var(--color-primario);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f7f9fc;
+}
+
+td.izquierda, th.izquierda {
+    text-align: left;
+}
+
+td.derecha, th.derecha {
+    text-align: right;
+}
+
+/* Celdas especiales de la tabla de multiplicar */
+td.diagonal {
+    background-color: #d6e6f7;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+td.par {
+    color: var(--color-exito);
+}
+
+th.cabecera-lateral {
+    background-color: var(--color-primario);
+    color: #ffffff;
+}
+
+/* ===== Formularios ===== */
+form.parametros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: flex-end;
+    background-color: #f7f9fc;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 1rem;
+}
+
+form.parametros label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    margin-bottom: 0.2rem;
+}
+
+form.parametros input,
+form.parametros select {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+form.parametros button {
+    background-color: var(--color-acento);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form.parametros button:hover {
+    background-color: #2c81ba;
+}
+
+/* ===== Código en línea ===== */
+code {
+    background-color: #eef2f7;
+    border-radius: 3px;
+    padding: 0.05rem 0.35rem;
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 0.88em;
+    color: var(--color-primario);
+}
+
+/* ===== Links ===== */
+a {
+    color: var(--color-acento);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Menú del índice ===== */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.menu .item {
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.menu .item h2 {
+    font-size: 1.05rem;
+    margin: 0 0 0.3rem;
+    color: var(--color-primario);
+}
+
+.menu .item p {
+    margin: 0 0 0.7rem;
+    font-size: 0.92rem;
+    color: var(--color-texto-suave);
+}
+
+.menu .item .estructuras {
+    font-size: 0.8rem;
+    color: var(--color-texto-suave);
+    margin-bottom: 0.7rem;
+}
+
+.menu .item code {
+    background-color: #eef2f7;
+    border-radius: 3px;
+    padding: 0.05rem 0.35rem;
+    font-size: 0.8rem;
+    color: var(--color-primario);
+}
+
+/* ===== Pie de página ===== */
+.pie {
+    text-align: center;
+    color: var(--color-texto-suave);
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
+
+.nota {
+    font-size: 0.88rem;
+    color: var(--color-texto-suave);
+    font-style: italic;
+}
