@@ -70,9 +70,12 @@ HTML en los seis scripts.
 
 ## Notas técnicas
 
-- Los scripts 2 a 5 reciben parámetros por `$_GET` mediante un formulario, pero
+- Los cinco scripts reciben parámetros por `$_GET` mediante un formulario, pero
   todos definen valores por defecto con el operador `??`, así que funcionan
   igual si se los abre sin parámetros.
+- En el script 1 las notas llegan como un único texto ("8, 6, 9"), así que se
+  convierten en arreglo con `explode()` descartando los valores que no son
+  números del 1 al 10.
 - Los datos que provienen del usuario se imprimen con `htmlspecialchars()` para
   evitar que se inyecte HTML en la página.
 - La validación de rangos se hace siempre antes del cálculo: si un dato es
