@@ -36,6 +36,7 @@ $contadorMultiplos5 = 0;
 $sumaTotal          = 0;
 $sumaPares          = 0;
 $sumaImpares        = 0;
+$sumaMultiplos5     = 0;
 $vueltas            = 0;
 $detalle            = [];   // arreglo donde se guarda cada número con su tipo
 
@@ -65,6 +66,7 @@ while ($numero <= $hasta) {
     $esMultiplo5 = ($numero % 5 == 0);
     if ($esMultiplo5) {
         $contadorMultiplos5++;
+        $sumaMultiplos5 = $sumaMultiplos5 + $numero;
     }
 
     $detalle[] = [
@@ -81,6 +83,7 @@ $cantidadNumeros = $vueltas;
 $promedio        = ($cantidadNumeros > 0) ? round($sumaTotal / $cantidadNumeros, 2) : 0;
 $porcentajePares = ($cantidadNumeros > 0) ? round(($contadorPares * 100) / $cantidadNumeros, 1) : 0;
 $porcentajeImpares = ($cantidadNumeros > 0) ? round(($contadorImpares * 100) / $cantidadNumeros, 1) : 0;
+$porcentajeMultiplos5 = ($cantidadNumeros > 0) ? round(($contadorMultiplos5 * 100) / $cantidadNumeros, 1) : 0;
 
 // ---------- 5. Segunda estructura repetitiva: do...while ----------
 // El do...while ejecuta el bloque ANTES de evaluar la condición,
@@ -157,10 +160,10 @@ require __DIR__ . '/partials/cabecera.php';
                 <td><?= $sumaImpares ?></td>
             </tr>
             <tr>
-                <td class="izquierda">Múltiplos de 5</td>
+                <td class="izquierda">Múltiplos de 5 *</td>
                 <td><?= $contadorMultiplos5 ?></td>
-                <td>—</td>
-                <td>—</td>
+                <td><?= $porcentajeMultiplos5 ?> %</td>
+                <td><?= $sumaMultiplos5 ?></td>
             </tr>
             <tr>
                 <td class="izquierda"><strong>Total del rango</strong></td>
@@ -170,6 +173,15 @@ require __DIR__ . '/partials/cabecera.php';
             </tr>
         </tbody>
     </table>
+
+    <p class="nota">
+        * La fila de múltiplos de 5 se superpone con las dos anteriores: un
+        múltiplo de 5 también es par o impar (el 10 es par y múltiplo de 5 a la
+        vez). Por eso su porcentaje no forma parte del 100 % y su suma no se
+        suma al total: son los mismos números, contados con otro criterio.
+        Pares e impares, en cambio, sí son excluyentes entre sí, y por eso sus
+        cantidades y sus sumas cierran exactamente con el total.
+    </p>
 
     <div class="resultado">
         <span class="numero-grande"><?= $sumaTotal ?></span>
